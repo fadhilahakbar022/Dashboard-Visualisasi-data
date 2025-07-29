@@ -3,48 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Kualitas Udara Jakarta</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Dashboard Kualitas Udara Jakarta (Minimal)</title>
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #e0f2f7; 
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Mencegah scrollbar jika iframe pas dengan viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Memastikan body mengisi seluruh tinggi viewport */
+            background-color: #e0f2f7; /* Tetap menggunakan warna latar belakang yang serasi */
         }
-        .card {
-            border-radius: 12px; 
-            box-shadow: 0 6px 15px rgba(44, 62, 80, 0.15); 
-        }
-        
         iframe {
-            border-radius: 12px; 
+            width: 100vw; /* Lebar iframe mengisi seluruh lebar viewport */
+            height: 100vh; /* Tinggi iframe mengisi seluruh tinggi viewport */
+            border: 0; /* Menghilangkan border */
         }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen p-4">
-    <div class="container mx-auto max-w-4xl bg-white p-8 rounded-xl shadow-lg card">
-        <!-- Main heading for the dashboard -->
-        <h1 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8" style="color: #2c3e50;">
-            Dashboard Visualisasi Indeks Standar Pencemaran Udara Kota Jakarta (2024-2025)
-        </h1>
-
-        <!-- Iframe to embed the Looker Studio dashboard -->
-        <!-- The iframe is made responsive using Tailwind's w-full and aspect-video for a 16:9 ratio -->
-        <div>
-            <iframe
-                src="https://lookerstudio.google.com/embed/reporting/41e9ce41-cbd3-4e01-a177-28ea5bc8deb8/page/BbiRF"
-                frameborder="0"
-                style="border:0"
-                allowfullscreen
-                sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-                class="absolute top-0 left-0 w-full h-full"
-            ></iframe>
-        </div>
-
-        <!-- Optional: Add a small footer or description -->
-        <p class="text-center mt-8 text-sm" style="color: #34495e;">
-            Data bersumber dari portal data.jakarta.go.id.
-        </p>
-    </div>
+<body>
+    <iframe src="https://lookerstudio.google.com/embed/reporting/41e9ce41-cbd3-4e01-a177-28ea5bc8deb8/page/BbiRF"
+            frameborder="0"
+            allowfullscreen
+            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+    </iframe>
 </body>
 </html>
