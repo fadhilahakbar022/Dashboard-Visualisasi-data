@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Kualitas Udara Jakarta</title>
+    <title>Dasbor Laporan Interaktif</title>
     <style>
-        body {
+        /* CSS untuk membuat iframe memenuhi seluruh layar */
+        body, html {
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Mencegah scrollbar jika iframe pas dengan viewport */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh; /* Memastikan body mengisi seluruh tinggi viewport */
-            background-color: #e0f2f7; /* Tetap menggunakan warna latar belakang yang serasi */
+            height: 100%;
+            overflow: hidden; /* Mencegah scroll bar yang tidak perlu */
         }
         iframe {
-            width: 100vw; /* Lebar iframe mengisi seluruh lebar viewport */
-            height: 100vh; /* Tinggi iframe mengisi seluruh tinggi viewport */
-            border: 0; /* Menghilangkan border */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0; /* Menghilangkan border default dari iframe */
         }
     </style>
 </head>
-<body>
-    <iframe src="https://lookerstudio.google.com/embed/reporting/41e9ce41-cbd3-4e01-a177-28ea5bc8deb8/page/BbiRF"
-            frameborder="0"
-            allowfullscreen
-            sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+<body class="h-full">
+
+    <!-- Kode Sematan (Embed) dari Looker Studio -->
+    <iframe 
+        src="https://lookerstudio.google.com/embed/reporting/41e9ce41-cbd3-4e01-a177-28ea5bc8deb8/page/BbiRF" 
+        frameborder="0" 
+        allowfullscreen 
+        sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
     </iframe>
+
 </body>
 </html>
-
